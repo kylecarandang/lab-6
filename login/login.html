@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="login-wrapper">
+        <!-- =========================
+        LEFT SIDE - BRANDING
+        ========================= -->
+        <div class="login-brand">
+            <div class="brand-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="../image/gwing.png" alt="Web Application Logo">
+                </div>
+                <h1>Web Application</h1>
+                <p>
+                    Welcome back!<br>
+                    Please login to continue.
+                </p>
+            </div>
+        </div>
+
+        <!-- =========================
+        RIGHT SIDE - LOGIN FORM
+        ========================= -->
+        <div class="login-form-section">
+            <div class="login-container">
+                <h2>Login</h2>
+                <p class="login-subtitle">
+                    Sign in to your account
+                </p>
+                <form id="loginForm">
+                    <!-- Username -->
+                    <div class="form-group">
+                        <label>Username / Email</label>
+                        <input
+                            type="text"
+                            id="loginUsername"
+                            placeholder="Enter username or email">
+                        <span
+                            id="loginUsernameError"
+                            class="error">
+                        </span>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label>Password</label>
+                        <div class="password-container">
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                placeholder="Enter password">
+                            <i
+                                class="fa-solid fa-eye"
+                                id="toggleLoginPassword">
+                            </i>
+                        </div>
+                        <span
+                            id="loginPasswordError"
+                            class="error">
+                        </span>
+                    </div>
+
+                    <!-- Login Button -->
+                    <button
+                        class="login-button"
+                        type="submit">
+                        Login
+                    </button>
+
+                    <!-- Sign Up Link -->
+                    <div class="signup-link">
+                        <span>Don't have an account?</span>
+                        <a href="../sign-up/sign-up.html">
+                            Sign Up
+                        </a>
+                    </div>
+
+                    <!-- Login Message -->
+                    <p id="loginMessage"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="login.js"></script>
+</body>
+</html>

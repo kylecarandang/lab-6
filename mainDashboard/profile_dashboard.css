@@ -1,0 +1,312 @@
+﻿/* =========================================
+   GENERAL
+   ========================================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+}
+
+/* =========================================
+   SIDEBAR
+   ========================================= */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 240px;
+    height: 100vh;
+    background: #007BFF;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Dashboard Logo */
+.dashboard-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+
+.dashboard-logo i {
+    font-size: 25px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Logout */
+.logout-button {
+    margin-top: auto;
+    padding: 12px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.logout-button:hover {
+    background: #b02a37;
+}
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+.main-content {
+    margin-left: 240px;
+    padding: 30px;
+}
+
+/* Header */
+.dashboard-header {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+}
+
+.dashboard-header h1 {
+    margin: 0 0 5px;
+}
+
+.dashboard-header p {
+    margin: 0;
+    color: #777;
+}
+
+/* =========================================
+   PROFILE CONTAINER
+   ========================================= */
+.profile-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Profile Section */
+.profile-section {
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.profile-section:last-of-type {
+    border-bottom: none;
+}
+
+.profile-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #333333;
+}
+
+.profile-section h2 i {
+    color: #007BFF;
+    margin-right: 8px;
+}
+
+/* Form Grid */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #333333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background: white;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+.form-group input[readonly] {
+    background: #f1f3f5;
+    cursor: not-allowed;
+}
+
+.form-group small {
+    margin-top: 5px;
+    color: #777777;
+    font-size: 11px;
+}
+
+/* Error Message */
+.error {
+    color: #dc3545;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+    min-height: 15px;
+}
+
+input.error-border {
+    border: 1px solid #dc3545;
+    background: #fff8f8;
+}
+
+/* Profile Actions */
+.profile-actions {
+    text-align: center;
+    padding-top: 10px;
+}
+
+/* Save Button */
+.save-button {
+    padding: 12px 25px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.save-button:hover {
+    background: #0056b3;
+}
+
+.save-button i {
+    margin-right: 7px;
+}
+
+/* Profile Message */
+.profile-message {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.profile-success {
+    color: #28a745;
+}
+
+.profile-error {
+    color: #dc3545;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+        padding: 15px 10px;
+    }
+
+    .dashboard-logo span {
+        display: none;
+    }
+
+    nav a {
+        justify-content: center;
+    }
+
+    nav a span {
+        display: none;
+    }
+
+    .logout-button {
+        font-size: 0;
+        padding: 12px 5px;
+    }
+
+    .logout-button span {
+        display: none;
+    }
+
+    .logout-button i {
+        font-size: 18px;
+    }
+
+    .main-content {
+        margin-left: 70px;
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-container {
+        padding: 20px;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .main-content {
+        padding: 15px;
+    }
+
+    .dashboard-header {
+        padding: 15px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 24px;
+    }
+
+    .profile-container {
+        padding: 15px;
+    }
+}

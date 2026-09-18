@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Dashboard</title>
+    <link rel="stylesheet" href="main_dashboard.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- =====================================
+         SIDEBAR
+         ===================================== -->
+    <aside class="sidebar">
+        <div class="dashboard-logo">
+            <i class="fa-solid fa-laptop-code"></i>
+            <span>Web Application</span>
+        </div>
+
+        <nav>
+            <a href="main_dashboard.html" class="active">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Reports</span>
+            </a>
+            <!-- Link updated per PDF 2 Step 1 -->
+            <a href="profile_dashboard.html">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+            <a href="#">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <!-- Logout -->
+        <button class="logout-button" onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </button>
+    </aside>
+
+    <!-- =====================================
+         MAIN CONTENT
+         ===================================== -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div>
+                <h1>Dashboard</h1>
+                <p id="welcomeUser">Welcome back, Admin!</p>
+            </div>
+        </header>
+
+        <!-- Cards -->
+        <section class="cards">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <div>
+                    <h3>Users</h3>
+                    <p>25</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-file"></i>
+                </div>
+                <div>
+                    <h3>Reports</h3>
+                    <p>12</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <div>
+                    <h3>Activities</h3>
+                    <p>48</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Welcome Panel -->
+        <section class="welcome-panel">
+            <h2>Welcome to the Main Dashboard</h2>
+            <p>
+                This is the main area of your web application.
+                Additional features and modules can be added
+                here as your project develops.
+            </p>
+        </section>
+    </main>
+
+    <script type="module" src="main_dashboard.js"></script>
+</body>
+</html>

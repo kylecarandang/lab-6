@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <!-- Profile CSS -->
+    <link rel="stylesheet" href="profile_dashboard.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- =====================================
+         SIDEBAR
+         ===================================== -->
+    <aside class="sidebar">
+        <!-- Logo -->
+        <div class="dashboard-logo">
+            <i class="fa-solid fa-laptop-code"></i>
+            <span>Web Application</span>
+        </div>
+
+        <!-- Navigation -->
+        <nav>
+            <!-- Dashboard -->
+            <a href="main_dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+            <!-- Reports -->
+            <a href="#">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Reports</span>
+            </a>
+            <!-- Profile -->
+            <a href="profile_dashboard.html" class="active">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+            <!-- Settings -->
+            <a href="#">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <!-- Logout -->
+        <button class="logout-button" onclick="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </button>
+    </aside>
+
+    <!-- =====================================
+         MAIN CONTENT
+         ===================================== -->
+    <main class="main-content">
+        <!-- =================================
+             HEADER
+             ================================= -->
+        <header class="dashboard-header">
+            <h1>My Profile</h1>
+            <p>Manage your personal and contact information.</p>
+        </header>
+
+        <!-- =================================
+             PROFILE FORM
+             ================================= -->
+        <section class="profile-container">
+            <form id="profileForm">
+                <!-- =================================
+                     PERSONAL INFORMATION
+                     ================================= -->
+                <div class="profile-section">
+                    <h2>
+                        <i class="fa-solid fa-user"></i>
+                        Personal Information
+                    </h2>
+                    <div class="form-grid">
+                        <!-- Given Name -->
+                        <div class="form-group">
+                            <label for="givenName">Given Name</label>
+                            <input
+                                type="text"
+                                id="givenName"
+                                placeholder="e.g., Juan">
+                            <span id="givenNameError" class="error"></span>
+                        </div>
+
+                        <!-- Middle Name -->
+                        <div class="form-group">
+                            <label for="middleName">Middle Name</label>
+                            <input
+                                type="text"
+                                id="middleName"
+                                placeholder="e.g., Santos">
+                            <span id="middleNameError" class="error"></span>
+                        </div>
+
+                        <!-- Surname -->
+                        <div class="form-group">
+                            <label for="surname">Surname</label>
+                            <input
+                                type="text"
+                                id="surname"
+                                placeholder="e.g., Dela Cruz">
+                            <span id="surnameError" class="error"></span>
+                        </div>
+
+                        <!-- Birthdate -->
+                        <div class="form-group">
+                            <label for="birthdate">Birthdate</label>
+                            <input
+                                type="date"
+                                id="birthdate">
+                            <span id="birthdateError" class="error"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- =================================
+                     CONTACT INFORMATION
+                     ================================= -->
+                <div class="profile-section">
+                    <h2>
+                        <i class="fa-solid fa-address-book"></i>
+                        Contact Information
+                    </h2>
+                    <div class="form-grid">
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="e.g., juan@example.com"
+                                readonly>
+                            <small>
+                                Email is managed by your Firebase account.
+                            </small>
+                        </div>
+
+                        <!-- Mobile Number -->
+                        <div class="form-group">
+                            <label for="mobileNumber">Mobile Number</label>
+                            <input
+                                type="tel"
+                                id="mobileNumber"
+                                placeholder="e.g., 09171234567"
+                                maxlength="11"
+                                inputmode="numeric">
+                            <span id="mobileNumberError" class="error"></span>
+                        </div>
+
+                        <!-- Alternative Contact -->
+                        <div class="form-group">
+                            <label for="alternativeContact">Alternative Contact Number</label>
+                            <input
+                                type="tel"
+                                id="alternativeContact"
+                                placeholder="e.g., 09221234567"
+                                maxlength="11"
+                                inputmode="numeric">
+                            <span id="alternativeContactError" class="error"></span>
+                        </div>
+
+                        <!-- Emergency Contact Name -->
+                        <div class="form-group">
+                            <label for="emergencyContactName">Emergency Contact Name</label>
+                            <input
+                                type="text"
+                                id="emergencyContactName"
+                                placeholder="e.g., Maria Dela Cruz">
+                        </div>
+
+                        <!-- Emergency Contact Number -->
+                        <div class="form-group">
+                            <label for="emergencyContactNumber">Emergency Contact Number</label>
+                            <input
+                                type="tel"
+                                id="emergencyContactNumber"
+                                placeholder="e.g., 09181234567"
+                                maxlength="11"
+                                inputmode="numeric">
+                            <span id="emergencyContactNumberError" class="error"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- =================================
+                     ADDRESS
+                     ================================= -->
+                <div class="profile-section">
+                    <h2>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Address
+                    </h2>
+                    <div class="form-grid">
+                        <!-- Block / Lot -->
+                        <div class="form-group">
+                            <label for="blockLot">Block / Lot</label>
+                            <input
+                                type="text"
+                                id="blockLot"
+                                placeholder="e.g., Block 12 Lot 8">
+                            <span id="blockLotError" class="error"></span>
+                        </div>
+
+                        <!-- Barangay -->
+                        <div class="form-group">
+                            <label for="barangay">Barangay</label>
+                            <input
+                                type="text"
+                                id="barangay"
+                                placeholder="e.g., San Jose">
+                            <span id="barangayError" class="error"></span>
+                        </div>
+
+                        <!-- City -->
+                        <div class="form-group">
+                            <label for="city">City / Municipality</label>
+                            <input
+                                type="text"
+                                id="city"
+                                placeholder="e.g., Rodriguez">
+                            <span id="cityError" class="error"></span>
+                        </div>
+
+                        <!-- Province -->
+                        <div class="form-group">
+                            <label for="province">Province</label>
+                            <input
+                                type="text"
+                                id="province"
+                                placeholder="e.g., Rizal">
+                            <span id="provinceError" class="error"></span>
+                        </div>
+
+                        <!-- ZIP / Postal Code -->
+                        <div class="form-group">
+                            <label for="postalCode">ZIP / Postal Code</label>
+                            <input
+                                type="text"
+                                id="postalCode"
+                                placeholder="e.g., 1860"
+                                maxlength="4"
+                                inputmode="numeric">
+                            <span id="postalCodeError" class="error"></span>
+                        </div>
+
+                        <!-- Country -->
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <input
+                                type="text"
+                                id="country"
+                                value="Philippines"
+                                placeholder="e.g., Philippines">
+                            <span id="countryError" class="error"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- =================================
+                     SAVE PROFILE
+                     ================================= -->
+                <div class="profile-actions">
+                    <button
+                        type="submit"
+                        class="save-button">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Save Profile
+                    </button>
+                    <!-- Error / Status message -->
+                    <p id="profileMessage" class="profile-message"></p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- =====================================
+         JAVASCRIPT
+         ===================================== -->
+    <script
+        type="module"
+        src="profile_dashboard.js">
+    </script>
+</body>
+</html>
